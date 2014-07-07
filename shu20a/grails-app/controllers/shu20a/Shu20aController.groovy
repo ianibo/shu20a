@@ -10,7 +10,8 @@ class Shu20aController {
   def aspdf() {
     def data = [:]
     def args = [template: "pdf", model: [data: data], controller:this]
+    def r = (javax.servlet.http.HttpServletResponse) response
 
-    renderPdf(args)
+    pdfRenderingService.render(args,r);
   }
 }
